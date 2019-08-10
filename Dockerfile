@@ -1,7 +1,6 @@
 
-FROM microsoft/dotnet
-ARG source
-WORKDIR /app
+FROM microsoft/dotnet:1.1.11-runtime-stretch
+WORKDIR /www/gis
 EXPOSE 80
-COPY ${source:-/} .
+COPY . /www/gis
 ENTRYPOINT ["dotnet", "pgis.dll"]
